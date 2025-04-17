@@ -1,0 +1,13 @@
+(This assumes you are connecting to a Linux machine)
+Process:
+	
+	1. Ensure both devices, (the one you are trying to ssh into and the one you are using to ssh with), are on the same WiFi network
+	1. Make sure you have a ssh client installed on both the devices
+		i. You can check this by running the command, "ssh", in the command line, if the command is not recognized, ssh is not installed
+	2. Run the commands on the device you want to ssh into
+		i. whoami: To return the name of the user
+		ii. ipconfig
+			- Find the section called wlp2s0 and note the value in the inet field there
+	3. Go back to the device you are using to ssh and run the command ssh "user"@"the inet from above"
+	4. Enter yes to the prompt returned
+	5. Enter the password for the machine you are trying to ssh into
