@@ -1,0 +1,17 @@
+This guide assumes you are on windows
+
+- Download imager for windows at https://www.raspberrypi.com/software/ and follow necessary instructions
+
+- Run the imager
+
+- Choose OS, (Raspberry Pi OS 64 bit Lite)
+
+- Choose the correct SD card you wish to flash to
+
+- Write
+
+- Once finished writing, unplug microsd and plug it into raspberry pi
+
+
+
+- Later make sure to SET A NEW PASSWORD ON THE RASPBERRY PI, (default is raspberry)
