@@ -46,13 +46,13 @@ This report serves two primary functions:
   - Solution
     - Go to your domain provider (in our case Squarespace)
     - Go to DNS, delete the existing domain nameservers, and replace them the ones provided by Cloudflare (found in your Cloudflare account under DNS)
-Lesson Learned
+  - Lesson Learned
     - It can take up to 24 hours for Cloudflare to recognize the nameservers so don’t expect to put a website up immediately after buying a domain.
-    - Cloudflared is not finding .json file when building the tunnel
-Solution
+- Cloudflared is not finding .json file when building the tunnel
+  - Solution
     - Find the true directory of your .json file. This may include typing whoami to find the name of your user directory. Update it accordingly.
-    - Lesson Learned
-    - Even if your pwd command shows the correct directory, the user in which you are running it may hide a layer of the file path
+  - Lesson Learned
+      - Even if your pwd command shows the correct directory, the user in which you are running it may hide a layer of the file path
 - CSS Changes are not updating with new deployment
   - Solution
     - Go to Cloudflare Dashboard, Caching, Configuration, and Purge Everything
@@ -90,6 +90,30 @@ sudo systemctl enable cloudflared
 ```
   - Lesson Learned
     - Even though the server may be running correctly, your work is not over. You still need to perform maintenance or set limitations automatically to protect server performance.
+- Server needs to be redeployed in a new location
+  - Solution
+    - Establish network connection in a new location
+    - On a device on the same network, run the following in your terminal
+```PowerShell
+ssh boringpi@sheikhzi
+Password: Boring123
+```
+
+Then run the following on the server via SSH
+    
+```Bash
+sudo systemctl enable cloudflared
+sudo systemctl start cloudflared
+sudo systemctl status cloudlared
+```
+-
+  - Lesson Learned
+    - While the tunnel needs to be restarted when connecting to a new network, no additional configuration is needed
+- Javascript code is failing deployment
+  - Solution
+    - Embed Javascript via a ```function``` block in the HTML rather than using a separate file
+  - Lesson Learned
+    - The server configuration is not equipped to handle/link Javascript files
     
 ### Potential Improvements
 - To update the website (current process)
