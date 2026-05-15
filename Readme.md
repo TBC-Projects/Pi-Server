@@ -104,7 +104,7 @@ Then run the following on the server via SSH
 ```Bash
 sudo systemctl enable cloudflared
 sudo systemctl start cloudflared
-sudo systemctl status cloudlared
+sudo systemctl status cloudflared
 ```
 -
   - Lesson Learned
